@@ -1,0 +1,1 @@
+from usim800.Info.info import info
