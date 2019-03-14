@@ -72,4 +72,5 @@ True
 
 Future Plan and  improvements
 ------------
+* better error handling
 * read sms
