@@ -2,8 +2,6 @@ import serial
 import time
 import re
 import json
-# from compile_AT import Compile
-
 
 class communicate:
     TIMMEOUT = 1
