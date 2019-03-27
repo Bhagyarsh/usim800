@@ -69,7 +69,6 @@ SMS
 >>> gsm.sms.send("8850813167","hi from usim800")
 True
 ```
-
 Future Plan and  improvements
 ------------
 * better error handling
