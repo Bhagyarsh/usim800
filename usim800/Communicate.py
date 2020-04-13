@@ -4,14 +4,10 @@ import re
 import json
 
 class communicate:
-    TIMMEOUT = 1
     cmd_list = []
 
-    def __init__(self, baudrate, path):
-        self._baudrate = baudrate
-        self._path = path
-        self._port = serial.Serial(path, baudrate=baudrate,
-                                  timeout=communicate.TIMMEOUT)
+    def __init__(self, port):
+        self._port = port
 
     def _setcmd(self, cmd, end='\r\n'):
         end = '\r\n'
