@@ -38,4 +38,5 @@ class sms(communicate):
         # Sets the GSM Module in Text Mode
         self._send_cmd(cmd,read=False)
         data = self._readtill("OK")
-        print(data)
+        #print(data)
+        return data 
