@@ -109,3 +109,24 @@ class sms(communicate):
         self._send_cmd(cmd,read=False)
         data = self._readtill("OK")
         return _parse_cmgl_response(data)
+
+    def deleteAllReadMsg(self,index=None):
+        # Delete all read message. Leave unread message and outgoing message untouched. 
+        # You can provide the index of ANY existing message to make this function runs faster. 
+
+        # API forces you to provide an index. So we must readAll()
+        if index is None:
+            msgs = self.readAll()
+            if len(msgs) == 0:
+                return
+            index = list(msgs.keys())[0]
+        if not isinstance(index, str):
+            index = str(index)
+
+        cmd = "AT"
+        self._send_cmd(cmd)
+        cmd = "AT+CMGD=" + index + ",1"
+        # Sets the GSM Module in Text Mode
+        self._send_cmd(cmd)
+
+
