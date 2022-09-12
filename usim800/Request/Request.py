@@ -114,7 +114,7 @@ class request(communicate):
         time.sleep(4)
         cmd = 'AT+HTTPACTION=1'
         self._send_cmd(cmd)
-        time.sleep(2)
+        time.sleep(4)
         cmd = 'AT+HTTPREAD'
         self._send_cmd(cmd, get_decode_data=True)
         data = self._getdata(
